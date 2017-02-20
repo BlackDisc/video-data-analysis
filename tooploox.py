@@ -18,6 +18,5 @@ def plot_histogram_view_vs_videos(data, title):
     plt.show()
 
 
-def compute_mrse(predictor, input_data, ground_truth):
-
+def compute_mrse(predictor, input_data, ground_truth)
     return sum((predictor.predict(input_data)/ground_truth - 1)**2)/len(ground_truth)
