@@ -1,6 +1,6 @@
 import tooploox as tp
 import numpy as np
-from sklearn import datasets, linear_model
+from sklearn import linear_model
 import matplotlib.pyplot as plt
 
 input_file = 'data.csv'
@@ -30,12 +30,12 @@ print "Q1: {:.2f}, Q2: {:.2f}, Q3: {:.2f}\n".format(np.percentile(video_views[:,
                                                     np.percentile(video_views[:, 167], 75))
 
 # ---------- Exercise 2 ----------
-# tp.plot_histogram_view_vs_videos(video_views[:, 167],
-#                                 "Plot of number of video views distribution after one week v(168)")
+tp.plot_histogram_view_vs_videos(video_views[:, 167],
+                                 "Plot of number of video views distribution after one week v(168)")
 
 # ---------- Exercise 3 ----------
-# tp.plot_histogram_view_vs_videos(np.log(video_views[:, 167]),
-#                                 "Plot of number of video views distribution after one week v(168)")
+tp.plot_histogram_view_vs_videos(np.log(video_views[:, 167]),
+                                 "Plot of number of video views distribution after one week v(168)")
 
 # ---------- Exercise 4 ----------
 data = np.log(video_views[:, 167])
@@ -43,8 +43,8 @@ data_mean = np.mean(data)
 data_std = np.std(data)
 data_idx = ~((data < data_mean - 3 * data_std) | (data > data_mean + 3 * data_std))
 video_views = video_views[data_idx, :]
-# tp.plot_histogram_view_vs_videos(np.log(video_views[:, 167]),
-#                                 "Plot of number of video views distribution after one week without outliner v(168)")
+tp.plot_histogram_view_vs_videos(np.log(video_views[:, 167]),
+                                 "Plot of number of video views distribution after one week without outliers v(168)")
 
 # ---------- Exercise 5 ----------
 print 'Correlations coefficients for v(1):v(24) and v(168)'
